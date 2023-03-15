@@ -4,7 +4,7 @@
   tasks:
     - name: "Include geekoops-nextcloud"
       include_role:
-        name: "geekoops-nextcloud"
+        name: "geekoops-nc-system"
     ## Setup test enviroment
     # Install and enable firewalld
     - name: Ensure firewalld is installed

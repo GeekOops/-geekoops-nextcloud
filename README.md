@@ -34,7 +34,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: jellyfish
       roles:
-         - role: geekoops-nextcloud
+         - role: geekoops-nc-system
            vars:
              db_configure: true
              db_name: 'nextcloud'
@@ -42,6 +42,9 @@ Including an example of how to use your role (for instance, with variables passe
              db_pass: 'password123'
              firewall_configure: true
              firewall_zone: 'public'
+
+This playbook will install the system package `nextcloud` and add a `nextcloud` database user and database with the password above.
+Firewall access is opened for http traffic and you can reach the nextcloud instance for configuration after installation on http://jellyfish/nextcloud (replace `jellyfish` with the system hostname).
 
 License
 -------
