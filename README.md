@@ -1,6 +1,8 @@
 geekoops-nextcloud
 ==================
 
+[![Test deployment](https://github.com/GeekOops/geekoops-nc-system/actions/workflows/CI.yml/badge.svg)](https://github.com/GeekOops/geekoops-nc-system/actions/workflows/CI.yml)
+
 Minimalistic role to install Nextcloud (as a system package) on an openSUSE Leap/SLES system.
 
 This role doesn't take care of AppArmor. You might need to disable AppArmor during installation.
