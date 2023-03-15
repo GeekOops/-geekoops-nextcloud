@@ -14,7 +14,7 @@
     line: 'APACHE_MPM="prefork"'
   notify: restart apache2
   tags: ['www']
-  
+
 - name: Ensure apache2 is started and enabled
   systemd:
     name: apache2
@@ -32,7 +32,7 @@
   zypper:
     name: nextcloud
     state: present
-    # Use the zypper module and install recommended packages as well, so that we have php installed and configured
+    # Use the zypper module and install recommended packages (e.g. php)
     disable_recommends: false
   notify: restart apache2
   tags: ['www']

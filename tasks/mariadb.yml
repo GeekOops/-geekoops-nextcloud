@@ -6,7 +6,7 @@
     name: mariadb
     state: present
   tags: ['db']
-  
+
 - name: Ensure MariaDB is started and enabled
   systemd:
     name: mariadb
