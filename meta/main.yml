@@ -5,7 +5,7 @@ galaxy_info:
   namespace: geekoops
   description: Minimalistic nextcloud setup role
   company: SUSE
-  issue_tracker_url: https://github.com/GeekOops/geekoops-nextcloud/issues
+  issue_tracker_url: https://github.com/GeekOops/geekoops-nc-system/issues
 
   license: MIT
 
