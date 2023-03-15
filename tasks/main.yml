@@ -1,0 +1,38 @@
+---
+# tasks file for geekoops-nextcloud
+
+- name: Ensure apache2 is installed
+  package:
+    name: apache2
+    state: present
+  tags: ['www']
+
+- name: Ensure MPM module "prefork" is used
+  lineinfile:
+    path: /etc/sysconfig/apache2
+    regexp: '^APACHE_MPM=".*"'
+    line: 'APACHE_MPM="prefork"'
+  notify: restart apache2
+  tags: ['www']
+  
+- name: Ensure apache2 is started and enabled
+  systemd:
+    name: apache2
+    enabled: true
+    state: started
+  tags: ['www']
+
+- include_tasks: firewall.yml
+  when: firewall_configure
+
+- include_tasks: mariadb.yml
+  when: db_configure
+
+- name: Ensure nextcloud is installed
+  zypper:
+    name: nextcloud
+    state: present
+    # Use the zypper module and install recommended packages as well, so that we have php installed and configured
+    disable_recommends: false
+  notify: restart apache2
+  tags: ['www']

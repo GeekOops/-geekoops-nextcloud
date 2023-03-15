@@ -1,0 +1,9 @@
+---
+# defaults file for geekoops-nextcloud
+
+db_configure: false
+db_name: 'nextcloud'
+db_user: 'nextcloud'
+db_pass: 'notsecret'
+firewall_configure: true
+firewall_zone: 'public'
